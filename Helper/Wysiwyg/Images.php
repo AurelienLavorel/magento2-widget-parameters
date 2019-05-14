@@ -12,8 +12,6 @@ class Images extends \Magento\Cms\Helper\Wysiwyg\Images
     public function getImagePath($filename)
     {
         $fileurl = $this->getCurrentUrl() . $filename;
-        $mediaUrl = $this->_storeManager->getStore()->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA);
-        $mediaPath = str_replace($mediaUrl, '', $fileurl);
-        return $mediaPath;
+        return $fileurl;
     }
 }
